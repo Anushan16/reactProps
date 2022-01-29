@@ -7,7 +7,7 @@ function App() {
   console.log(contacts[0])
   return (
     <div>
-    <Header />
+    <Header listName = "My Contacts" />
      <Card name = {contacts[0].name} 
      img = {contacts[0].imgURL}
        phoneNumber = {contacts[0].phone}
