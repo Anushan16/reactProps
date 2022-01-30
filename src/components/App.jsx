@@ -1,31 +1,38 @@
+// import React module and necescary components
 import React from "react";
 import Header from "./Header.jsx"
 import Card from "./Card.jsx"
 import contacts from "../contacts"
 
-function App() {
-  console.log(contacts[0])
+
+function App(){
   return (
     <div>
-    <Header listName = "My Contacts" />
-     <Card name = {contacts[0].name} 
-     img = {contacts[0].imgURL}
-       phoneNumber = {contacts[0].phone}
-       email= {contacts[0].email}
-     />
-     <Card name = {contacts[1].name} 
-     img = {contacts[1].imgURL}
-       phoneNumber = {contacts[1].phone}
-       email= {contacts[1].email}
-     />
-     <Card name = {contacts[2].name} 
-     img = {contacts[2].imgURL}
-       phoneNumber = {contacts[2].phone}
-       email= {contacts[2].email}
-     />
-    </div> 
-    
-  );
+    {/* // return map method on the contacts array, that loops through and maps each individual object(and its properties) to the card component */}
+      {contacts.map(function(contact){
+        return(
+          
+          // key must be returned on the outer most element 
+          <div key = {contact.id}>
+          <Header listName = "My Contacts" />
+            <Card 
+              identifier = {contact.id}
+              name = {contact.name} 
+              img = {contact.imgURL}
+              phoneNumber = {contact.phone}
+              email= {contact.email}
+
+            
+             />
+          </div>
+        )
+      })}
+    </div>
+  )
 }
 
+
+
+
+// export this module
 export default App;

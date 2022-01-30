@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import App from "./components/App";
 import contacts from "./contacts"
 
-console.log(contacts)
+
 
 ReactDOM.render(<App />, document.getElementById("root"));
 
